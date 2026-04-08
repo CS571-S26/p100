@@ -1,19 +1,13 @@
 import { Routes, Route } from "react-router-dom";
-
-function Home() {
-  return <h1>Home Page</h1>;
-}
-
-function Projects() {
-  return <h1>Projects Page</h1>;
-}
+import HomePage from "./pages/HomePage";
+import ProjectPage from "./pages/ProjectPage";
 
 export default function Router() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/projects" element={<Projects />} />
-      <Route path="/socials" element={<Projects />} />
+      <Route path="/" element={<HomePage />} />
+      <Route path="/projects" element={<ProjectPage />} />
+      <Route path="/socials" element={<ProjectPage />} />
     </Routes>
   );
 }

@@ -5,13 +5,16 @@ import logo from "../assets/logo.png";
 export default function NavigationBar() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
-      <Container style={{ backgroundColor: "#232749" }}>
-        <Navbar.Brand href="/">
-          {" "}
+      <Container fluid style={{ backgroundColor: "#232749" }}>
+        <Navbar.Brand as={Link} to="/">
           <Image src={logo} alt="Logo" height="40" roundedCircle />
         </Navbar.Brand>
 
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle
+          aria-controls="basic-navbar-nav"
+          style={{ backgroundColor: "#5b548e" }}
+        />
+
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link as={Link} to="/">
