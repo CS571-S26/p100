@@ -1,7 +1,6 @@
 import React from "react";
 import { Container, Card, Button } from "react-bootstrap";
 
-import DiscordQR from "../../assets/DiscordQR.png"
 
 export default function ContactDiscord() {
   const discordUsername = ""; // replace with your actual Discord tag
