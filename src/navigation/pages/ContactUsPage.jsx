@@ -1,9 +1,11 @@
 import React from "react";
 import { Container, Card, Button } from "react-bootstrap";
 
+import DiscordQR from "../../assets/DiscordQR.png"
+
 export default function ContactDiscord() {
   const discordUsername = ""; // replace with your actual Discord tag
-  const discordInviteLink = "https://discord.gg/"; // optional server invite
+  const discordInviteLink = "https://discord.gg/AbwwUH6H";
 
   return (
     <Container className="py-5">
@@ -29,10 +31,6 @@ export default function ContactDiscord() {
         </Card.Body>
       </Card>
 
-      {/* Optional QR code for mobile users */}
-      {/* <div className="text-center mt-4">
-        <img src={qrCode} alt="Discord QR Code" style={{ maxWidth: "200px" }} />
-      </div> */}
     </Container>
   );
 }
