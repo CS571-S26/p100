@@ -18,9 +18,9 @@ export default function HomePage() {
           <Row className="align-items-center">
             
             <Col md={6}>
-              <h2>What we do</h2>
+              <h2>What We Do</h2>
               <p>
-                We meet weekly to design, code, and playtest games. Whether you're
+                We meet weekly to design, code, and play games. Whether you're
                 interested in programming, art, or storytelling, our club
                 offers a place to collaborate and improve your skills.
               </p>
