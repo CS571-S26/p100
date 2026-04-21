@@ -13,6 +13,7 @@
 
   --navbar-text: #ffffff;
   --navbar-text-hover: var(--accent);
+  --bs-card-bg: #292151;
 
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
@@ -119,4 +120,15 @@ code {
 
 .navbar-brand {
   color: var(--navbar-text) !important;
+}
+
+.navbar-toggler {
+  border-color: var(--border) !important;
+}
+
+.container-fluid {
+  border: none !important;
+}
+.navbar-toggler:focus {
+  box-shadow: none !important;
 }

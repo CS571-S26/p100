@@ -1,6 +1,6 @@
 import { Card } from "react-bootstrap";
 
-export default function EventCard({ title, date, description }) {
+export default function EventCard({ title, date, description, location }) {
   const formatted = new Date(date).toLocaleDateString("en-US", {
     month: "short", day: "numeric",
   });
@@ -12,6 +12,7 @@ export default function EventCard({ title, date, description }) {
           {formatted}
         </p>
         <Card.Title style={{ fontSize: "15px" }}>{title}</Card.Title>
+        <Card.Text style={{ fontSize: "13px", color: "#666" }}>{location}</Card.Text>
         <Card.Text style={{ fontSize: "13px", color: "#666" }}>{description}</Card.Text>
       </Card.Body>
     </Card>

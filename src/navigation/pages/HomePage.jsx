@@ -3,19 +3,19 @@ import React from "react";
 import Crab from "../../assets/Crab.png"
 import Mask from "../../assets/Mask.png"
 import logo from "../../assets/logo.png"
-import DiscordQR from "../../assets/DiscordQR.png"
+import GDD_Discord_QR_CODE from "../../assets/GDD_Discord_QR_CODE.webp"
 import events from "../../eventsData";
 import EventCard from "../../components/EventCard";
 
 
 export default function HomePage() {
-  const discordInviteLink = "https://discord.gg/AbwwUH6H";
+  const discordInviteLink = "https://discord.gg/hS8AHX8UzX";
 
   return (
-    <div style = {{ background:"#0f0f1a" }}>
+    <div style = {{ background:"#232749" }}>
 
       {/* Intro */}
-      <div style={{ background: "#0f0f1a", padding: "56px 40px", textAlign: "center", marginBottom: "2px" }}>
+      <div style={{ background: "#232749", padding: "100px 40px", textAlign: "center", marginBottom: "2px" }}>
         <h1 style={{ color: "#f0eeff", fontSize: "36px", fontWeight: 500, marginBottom: "12px" }}>
           Game Design & Development Club
         </h1>
@@ -23,7 +23,7 @@ export default function HomePage() {
           Design, Code, and Play
         </p>
         <div style={{ display: "flex", gap: "8px", justifyContent: "center", marginTop: "16px", flexWrap: "wrap" }}>
-          {["Programming", "Art", "Storytelling", "Game Jams"].map(tag => (
+          {["Programming", "Art", "Narrative Design", "Game Jams"].map(tag => (
             <span key={tag} style={{
               fontSize: "11px", padding: "4px 12px", borderRadius: "20px",
               background: "rgba(120,100,255,0.18)", color: "#a090ff",
@@ -36,7 +36,7 @@ export default function HomePage() {
       </div>
 
       {/* What We Do Section */}
-      <Card className="mb-2 rounded-0">
+      <Card className="mb-2 rounded-0" >
         <Card.Body className="p-4">
           <Row className="align-items-center g-4">
             <Col md={6}>
@@ -62,11 +62,11 @@ export default function HomePage() {
               </div>
             </Col>
             <Col md={6}>
-              <div style={{ width: "100%", height: "300px", overflow: "hidden", borderRadius: "8px" }}>
+              <div style={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", padding: "16px" }}>
                 <Image
                   src={logo}
-                  alt="Game Image"
-                  style={{ width: "50%", height: "100%", objectFit: "fill" }}
+                  alt="Club Logo"
+                  style={{ width: "100%", maxWidth: "300px", height: "auto" }}
                 />
               </div>
             </Col>
@@ -80,7 +80,7 @@ export default function HomePage() {
           <p style={{ fontSize: "11px", letterSpacing: "1.5px", textTransform: "uppercase", color: "#999", marginBottom: "6px" }}>
             What's coming up
           </p>
-          <h2 className="mb-3">Upcoming Events</h2>
+          <h2 className="mb-3">Semester Events</h2>
           <Row className="g-3">
             {events.length > 0 ? (
               events.map(event => (
@@ -107,13 +107,11 @@ export default function HomePage() {
               </Button>
             </Col>
             <Col md={6}>
-              <div style={{ width: "100%", maxWidth: "180px" }}>
                 <Image
-                  src={DiscordQR}
+                  src={GDD_Discord_QR_CODE}
                   alt="Game Design and Development Discord QR Code"
-                  style={{ width: "100%", height: "auto", objectFit: "contain" }}
+                  style={{ width: "100%", maxWidth: "340px", height: "auto", objectFit: "contain" }}
                 />
-              </div>
             </Col>
           </Row>
         </Card.Body>

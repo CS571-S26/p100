@@ -4,7 +4,7 @@ import { Container, Card, Button } from "react-bootstrap";
 
 export default function ContactDiscord() {
   const discordUsername = ""; // replace with your actual Discord tag
-  const discordInviteLink = "https://discord.gg/AbwwUH6H";
+  const discordInviteLink = "https://discord.gg/hS8AHX8UzX";
 
   return (
     <Container className="py-5">
