@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Container } from "react-bootstrap";
 
 createRoot(document.getElementById("root")).render(
-  <Container fluid>
+  <Container fluid style={{ padding: 0, border: "none" }}>
     <App />
   </Container>,
 );

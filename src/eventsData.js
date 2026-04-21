@@ -15,6 +15,14 @@ const events = [
     location: "Room 130 & 131 Teacher Education",
     description: "Showcase your games or come and look at completed projects!",
   },
+  {
+    id: 3,
+    title: "Board Member Elections",
+    date: "2025-05-6",
+    time: "6:30 PM",
+    location: "131 Teacher Education",
+    description: "",
+  },
 ];
 
 export default events;
