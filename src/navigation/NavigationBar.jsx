@@ -44,13 +44,13 @@ export default function NavigationBar() {
 
         <Navbar.Collapse id="basic-navbar-nav" className="m-2">
           <Nav className="ms-auto">
-            <Nav.Link as={Link} to="/">
+            <Nav.Link as={Link} to="/" style={{fontSize: "14px"}} >
               About
             </Nav.Link>
-            <Nav.Link as={Link} to="/projects">
+            <Nav.Link as={Link} to="/projects" style={{fontSize: "14px"}} >
               Projects
             </Nav.Link>
-            <Nav.Link as={Link} to="/socials">
+            <Nav.Link as={Link} to="/socials" style={{fontSize: "14px"}} >
               Socials
             </Nav.Link>
 
@@ -65,26 +65,28 @@ export default function NavigationBar() {
                     color: "#9d93ff",
                     borderRadius: "8px",
                     marginLeft: "8px",
+                    fontSize: "14px"
                   }}
                 >
                   Post Project
                 </Nav.Link>
-                <Button
-                  onClick={handleLogout}
-                  size="sm"
-                  style={{
-                    background: "transparent",
-                    border: "1px solid rgba(157,147,255,0.4)",
-                    color: "#9d93ff",
-                    borderRadius: "8px",
-                    marginLeft: "8px",
-                  }}
-                >
-                  Log out
-                </Button>
+                  <Button
+                    onClick={handleLogout}
+                    size="sm"
+                    style={{
+                      background: "transparent",
+                      border: "1px solid rgba(157,147,255,0.4)",
+                      color: "#9d93ff",
+                      fontSize: "14px",
+                      borderRadius: "8px",
+                      marginLeft: "8px",
+                    }}
+                  >
+                    Log out
+                  </Button>
               </>
             ) : (
-              <Nav.Link as={Link} to="/login" style={{ color: "#9d93ff" }}>
+              <Nav.Link as={Link} to="/login" style={{ color: "#9d93ff", fontSize: "14px"}}>
                 Log in
               </Nav.Link>
             )}
