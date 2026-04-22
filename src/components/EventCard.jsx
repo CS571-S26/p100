@@ -6,7 +6,7 @@ export default function EventCard({ title, date, description, location }) {
   });
 
   return (
-    <Card className="h-100" style={{ backgroundColor: "#b9b5c7", border: "1px solid #232749", borderRadius: "12px" }}>
+    <Card className="h-100" style={{ backgroundColor: "#c3c0cf", border: "1px solid #232749", borderRadius: "12px" }}>
       <Card.Body>
         <p style={{ fontSize: "12px", color: "#010111", fontWeight: 500, marginBottom: "4px" }}>
           {formatted}

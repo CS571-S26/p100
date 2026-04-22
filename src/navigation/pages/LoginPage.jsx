@@ -26,7 +26,7 @@ export default function LoginPage() {
           <p style={{ fontSize: "11px", letterSpacing: "1.5px", textTransform: "uppercase", color: "#9d93ff", marginBottom: "6px" }}>
             Members only
           </p>
-          <h2 style={{ color: "#f0eeff", marginBottom: "24px" }}>Log in</h2>
+          <h2 style={{ color: "#f0eeff", marginBottom: "24px" }}>Login</h2>
 
           <div style={{ marginBottom: "16px" }}>
             <label style={{ display: "block", color: "#b8b8d0", fontSize: "13px", marginBottom: "6px" }}>
