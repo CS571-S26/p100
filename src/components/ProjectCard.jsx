@@ -1,19 +1,25 @@
 import { Image, Button, Card } from "react-bootstrap";
 
-function ProjectSection(props) {
-  const toolsText = props.tools.join(" | ");
-
+function ProjectCard(props) {
   return (
     <Card
       style={{
         width: "100%", // fill column width
         maxWidth: 500, // limit max width on large screens
-        backgroundColor: "#e2d3ab",
+        height: "500px",
+        backgroundColor: "#c6cbd4",
         border: "none",
       }}
     >
       <Card.Body>
-        <Image src="../assets/logo.png"></Image>
+        <Card.Img
+          src={props.cover_image}
+          style={{
+            width: "100%",
+            height: "300px",
+            objectFit: "fit",
+          }}
+        />
 
         {/* Card title */}
         <Card.Title
@@ -25,20 +31,8 @@ function ProjectSection(props) {
             marginBottom: "4px", // smaller margin to next line
           }}
         >
-          M.A.S.K.
+          {props.project_name}
         </Card.Title>
-
-        {/* Tools line */}
-        <p
-          style={{
-            color: "#6b4c3b",
-            fontSize: 15,
-            fontWeight: "700",
-            margin: "0 0 8px 0", // bottom margin to description
-          }}
-        >
-          {props.tools.join(" | ")}
-        </p>
 
         {/* Description */}
         <Card.Text
@@ -48,13 +42,17 @@ function ProjectSection(props) {
             fontSize: 15,
             paddingLeft: "16px",
             paddingRight: "16px",
-            height: "96px",
+            height: "30px",
           }}
         >
           {props.description}
         </Card.Text>
         <>
-          <Button variant="outline-dark" className="mf-2 me-2">
+          <Button
+            variant="outline-dark"
+            className="mf-2 me-2"
+            onClick={() => window.open(props.game_link, "_blank")}
+          >
             Play
           </Button>
           <Button variant="outline-dark" className="mf-2 me-2">
@@ -66,4 +64,4 @@ function ProjectSection(props) {
   );
 }
 
-export default ProjectSection;
+export default ProjectCard;

@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../../utils/supabase";
+import ProjectCard from "../../components/ProjectCard";
+import { Container, Row, Col } from "react-bootstrap";
 
 export default function ProjectPage() {
   const [projects, setProjects] = useState([]);
@@ -16,8 +18,14 @@ export default function ProjectPage() {
   }
 
   return (
-    <div>
-      <h1>Project Page</h1>
-    </div>
+    <Container className="d-flex justify-content-center">
+      <Row xs={1} md={3} className="g-4">
+        {projects.map((project) => (
+          <Col key={project.id}>
+            <ProjectCard {...project} />
+          </Col>
+        ))}
+      </Row>
+    </Container>
   );
 }
