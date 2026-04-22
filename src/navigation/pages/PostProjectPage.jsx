@@ -78,6 +78,18 @@ export default function PostProjectPage() {
       return;
     }
 
+    if (!form.description.trim()) {
+      setStatus("error");
+      setErrorMsg("Description is required.");
+      return;
+    }
+
+    if (!coverImage) {
+      setStatus("error");
+      setErrorMsg("Cover image is required.");
+      return;
+    }
+
     setStatus("loading");
     setErrorMsg("");
 
@@ -147,12 +159,12 @@ export default function PostProjectPage() {
                 name="project_name"
                 value={form.project_name}
                 onChange={handleChange}
-                placeholder="Title"
+                placeholder="e.g. M.A.S.K."
               />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formDescription">
-              <Form.Label>Description</Form.Label>
+              <Form.Label>Description *</Form.Label>
               <Form.Control
                 as="textarea"
                 rows={4}
@@ -185,7 +197,6 @@ export default function PostProjectPage() {
                   onChange={handleChange}
                 />
               </div>
-              <div className="col-1">to</div>
               <div className="col">
                 <Form.Control
                   type="date"
@@ -195,20 +206,13 @@ export default function PostProjectPage() {
                 />
               </div>
             </div>
-            <Button
-              variant="dark"
-              type="submit"
-              disabled={status === "loading"}
-            >
-              {status === "loading" ? "Posting..." : "Submit"}
-            </Button>
           </div>
 
           {/* ── Right column ── */}
           <div style={{ width: "260px", flexShrink: 0 }}>
             {/* Cover image */}
             <Form.Group className="mb-3" controlId="formCoverImage">
-              <Form.Label>Cover Image</Form.Label>
+              <Form.Label>Cover Image *</Form.Label>
 
               <div
                 onClick={() => fileInputRef.current?.click()}
@@ -310,6 +314,16 @@ export default function PostProjectPage() {
               />
             </Form.Group>
           </div>
+        </div>
+
+        <div className="d-flex justify-content-center">
+          <Button
+            variant="primary"
+            type="submit"
+            disabled={status === "loading"}
+          >
+            {status === "loading" ? "Posting..." : "Submit"}
+          </Button>
         </div>
       </Form>
     </div>
