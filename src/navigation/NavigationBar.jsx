@@ -23,6 +23,9 @@ export default function NavigationBar() {
             <Nav.Link as={Link} to="/projects">
               Projects
             </Nav.Link>
+            <Nav.Link as={Link} to="/projects/post">
+              Create Project
+            </Nav.Link>
             <Nav.Link as={Link} to="/socials">
               Socials
             </Nav.Link>
