@@ -185,6 +185,7 @@ export default function PostProjectPage() {
                   onChange={handleChange}
                 />
               </div>
+              <div className="col-1">to</div>
               <div className="col">
                 <Form.Control
                   type="date"
@@ -194,6 +195,13 @@ export default function PostProjectPage() {
                 />
               </div>
             </div>
+            <Button
+              variant="dark"
+              type="submit"
+              disabled={status === "loading"}
+            >
+              {status === "loading" ? "Posting..." : "Submit"}
+            </Button>
           </div>
 
           {/* ── Right column ── */}
@@ -303,10 +311,6 @@ export default function PostProjectPage() {
             </Form.Group>
           </div>
         </div>
-
-        <Button variant="primary" type="submit" disabled={status === "loading"}>
-          {status === "loading" ? "Posting..." : "Submit"}
-        </Button>
       </Form>
     </div>
   );
