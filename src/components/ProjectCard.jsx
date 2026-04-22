@@ -55,18 +55,20 @@ function ProjectCard(props) {
         </Card.Text>
 
         <div className="m-2">
-          <Button
-            className="mf-2 me-2"
-            style={{
-              background: "transparent",
-              border: "1px solid rgba(157,147,255,0.4)",
-              color: "#9d93ff",
-              borderRadius: "8px",
-            }}
-            onClick={() => window.open(props.game_link, "_blank")}
-          >
-            Play
-          </Button>
+          {props.game_link && (
+            <Button
+              className="mf-2 me-2"
+              style={{
+                background: "transparent",
+                border: "1px solid rgba(157,147,255,0.4)",
+                color: "#9d93ff",
+                borderRadius: "8px",
+              }}
+              onClick={() => window.open(props.game_link, "_blank")}
+            >
+              Play
+            </Button>
+          )}
           <Button
             className="mf-2 me-2"
             style={{
