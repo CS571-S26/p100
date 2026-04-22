@@ -19,7 +19,7 @@ export default function ProjectPage() {
 
   return (
     <Container className="d-flex justify-content-center">
-      <Row xs={1} md={3} className="g-4">
+      <Row xs={1} md={2} lg={3} className="g-4">
         {projects.map((project) => (
           <Col key={project.id}>
             <ProjectCard {...project} />

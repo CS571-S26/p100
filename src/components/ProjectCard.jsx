@@ -6,7 +6,8 @@ function ProjectCard(props) {
       style={{
         width: "100%", // fill column width
         maxWidth: 500, // limit max width on large screens
-        height: "500px",
+        height: "26rem",
+        maxHeight: 600,
         backgroundColor: "#c6cbd4",
         border: "none",
       }}
@@ -16,7 +17,7 @@ function ProjectCard(props) {
           src={props.cover_image}
           style={{
             width: "100%",
-            height: "300px",
+            height: "16rem",
             objectFit: "fit",
           }}
         />
@@ -38,16 +39,19 @@ function ProjectCard(props) {
         <Card.Text
           style={{
             color: "#3b2f2f",
-            marginBottom: "8px",
             fontSize: 15,
-            paddingLeft: "16px",
-            paddingRight: "16px",
-            height: "30px",
+            height: 48,
+            display: "-webkit-box",
+            WebkitLineClamp: 2, // limit to 2 lines
+            WebkitBoxOrient: "vertical",
+            overflow: "hidden",
           }}
+          className="ps-1 pe-1 m-2"
         >
           {props.description}
         </Card.Text>
-        <>
+
+        <div className="m-2">
           <Button
             variant="outline-dark"
             className="mf-2 me-2"
@@ -58,7 +62,7 @@ function ProjectCard(props) {
           <Button variant="outline-dark" className="mf-2 me-2">
             Learn More
           </Button>
-        </>
+        </div>
       </Card.Body>
     </Card>
   );
