@@ -35,6 +35,9 @@ export default function NavigationBar() {
             <Nav.Link as={Link} to="/projects">
               Projects
             </Nav.Link>
+            <Nav.Link as={Link} to="/socials">
+              Socials
+            </Nav.Link>
 
 
             {isLoggedIn ? (
@@ -54,10 +57,6 @@ export default function NavigationBar() {
               </Nav.Link>
             )}
 
-
-            <Nav.Link as={Link} to="/socials">
-              Socials
-            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
