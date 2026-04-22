@@ -5,6 +5,7 @@ import ContactUsPage from "./pages/ContactUsPage";
 import PostProjectPage from "./pages/PostProjectPage";
 import LoginPage from "./pages/LoginPage";
 import ProtectedRoute from "../components/ProtectedRoute";
+import LearnMore from "./pages/LearnMore";
 
 export default function Router() {
   return (
@@ -18,6 +19,8 @@ export default function Router() {
       } />
       <Route path="/socials" element={<ContactUsPage />} />
       <Route path="/login" element={<LoginPage />} />
+      <Route path="/projects/:id" element={<LearnMore />} />
+
     </Routes>
   );
 }

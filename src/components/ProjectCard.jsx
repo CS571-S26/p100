@@ -1,6 +1,9 @@
 import { Image, Button, Card } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 function ProjectCard(props) {
+  const navigate = useNavigate();
+
   return (
     <Card
       style={{
@@ -59,7 +62,11 @@ function ProjectCard(props) {
           >
             Play
           </Button>
-          <Button variant="outline-dark" className="mf-2 me-2">
+          <Button 
+            variant="outline-dark" 
+            className="mf-2 me-2"
+            onClick={() => navigate(`/projects/${props.id}`)}
+            >
             Learn More
           </Button>
         </div>
