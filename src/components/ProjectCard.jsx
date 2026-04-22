@@ -11,7 +11,7 @@ function ProjectCard(props) {
         maxWidth: 500, // limit max width on large screens
         height: "26rem",
         maxHeight: 600,
-        backgroundColor: "#c6cbd4",
+        backgroundColor: "#c3c0cf",
         border: "none",
       }}
     >
@@ -20,7 +20,7 @@ function ProjectCard(props) {
           src={props.cover_image}
           style={{
             width: "100%",
-            height: "16rem",
+            height: "14rem",
             objectFit: "fit",
           }}
         />
@@ -28,7 +28,7 @@ function ProjectCard(props) {
         {/* Card title */}
         <Card.Title
           style={{
-            color: "#3b2f2f",
+            color: "#000000",
             fontSize: 20,
             fontWeight: "700",
             marginTop: "8px",
@@ -41,7 +41,7 @@ function ProjectCard(props) {
         {/* Description */}
         <Card.Text
           style={{
-            color: "#3b2f2f",
+            color: "#000000",
             fontSize: 15,
             height: 48,
             display: "-webkit-box",
@@ -56,7 +56,8 @@ function ProjectCard(props) {
 
         <div className="m-2">
           <Button
-            variant="outline-dark"
+            variant="outline-dark
+          "
             className="mf-2 me-2"
             onClick={() => window.open(props.game_link, "_blank")}
           >
