@@ -34,9 +34,6 @@ export default function ContactPage() {
                 Primary contact
               </p>
               <h2 style={{ color: "#f0eeff", marginBottom: "6px" }}>Join our Discord</h2>
-              <p style={{ color: "#b8b8d0" }}>
-                Ask questions, get updates, and connect with other members.
-              </p>
             </div>
             <Button
               href={discordInviteLink}
