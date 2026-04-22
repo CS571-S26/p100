@@ -9,9 +9,9 @@ function ProjectCard(props) {
       style={{
         width: "100%", // fill column width
         maxWidth: 500, // limit max width on large screens
-        height: "26rem",
+        height: "24rem",
         maxHeight: 600,
-        backgroundColor: "#c3c0cf",
+        backgroundColor: "#2e3060",
         border: "none",
       }}
     >
@@ -28,7 +28,7 @@ function ProjectCard(props) {
         {/* Card title */}
         <Card.Title
           style={{
-            color: "#000000",
+            color: "#9d93ff",
             fontSize: 20,
             fontWeight: "700",
             marginTop: "8px",
@@ -41,7 +41,7 @@ function ProjectCard(props) {
         {/* Description */}
         <Card.Text
           style={{
-            color: "#000000",
+            color: "#9d93ff",
             fontSize: 15,
             height: 48,
             display: "-webkit-box",
@@ -56,18 +56,27 @@ function ProjectCard(props) {
 
         <div className="m-2">
           <Button
-            variant="outline-dark
-          "
             className="mf-2 me-2"
+            style={{
+              background: "transparent",
+              border: "1px solid rgba(157,147,255,0.4)",
+              color: "#9d93ff",
+              borderRadius: "8px",
+            }}
             onClick={() => window.open(props.game_link, "_blank")}
           >
             Play
           </Button>
-          <Button 
-            variant="outline-dark" 
+          <Button
             className="mf-2 me-2"
+            style={{
+              background: "transparent",
+              border: "1px solid rgba(157,147,255,0.4)",
+              color: "#9d93ff",
+              borderRadius: "8px",
+            }}
             onClick={() => navigate(`/projects/${props.id}`)}
-            >
+          >
             Learn More
           </Button>
         </div>

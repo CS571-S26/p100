@@ -5,22 +5,24 @@ import ContactUsPage from "./pages/ContactUsPage";
 import PostProjectPage from "./pages/PostProjectPage";
 import LoginPage from "./pages/LoginPage";
 import ProtectedRoute from "../components/ProtectedRoute";
-import LearnMore from "./pages/LearnMore";
+import LearnMore from "./pages/ProjectDetailsPage";
 
 export default function Router() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/projects" element={<ProjectPage />} />
-      <Route path="/projects/post" element={
-        <ProtectedRoute>
-          <PostProjectPage />
-        </ProtectedRoute>
-      } />
+      <Route
+        path="/projects/post"
+        element={
+          <ProtectedRoute>
+            <PostProjectPage />
+          </ProtectedRoute>
+        }
+      />
       <Route path="/socials" element={<ContactUsPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/projects/:id" element={<LearnMore />} />
-
     </Routes>
   );
 }
