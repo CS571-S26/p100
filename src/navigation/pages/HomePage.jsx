@@ -79,7 +79,7 @@ export default function HomePage() {
           <p style={{ fontSize: "11px", letterSpacing: "1.5px", textTransform: "uppercase", color: "#9d93ff", marginBottom: "6px" }}>
             What's coming up
           </p>
-          <h2 style={{ color: "#f0eeff" }} className="mb-3">Semester Events</h2>
+          <h2 style={{ color: "#ffefca" }} className="mb-3">Semester Events</h2>
           <Row className="g-3">
             {events.length > 0 ? (
               events.map(event => (
