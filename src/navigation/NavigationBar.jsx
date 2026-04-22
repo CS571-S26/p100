@@ -13,10 +13,28 @@ export default function NavigationBar() {
   };
 
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
-      <Container fluid style={{ backgroundColor: "#1f223e" }}>
+    <Navbar
+      expand="lg"
+      style={{ padding: 0, backgroundColor: "#1f223e", minHeight: "80px" }}
+    >
+      <Container
+        fluid
+        style={{
+          backgroundColor: "#1f223e",
+          padding: 0,
+          display: "flex",
+          alignItems: "center",
+          minHeight: "80px",
+        }}
+      >
         <Navbar.Brand as={Link} to="/">
-          <Image src={logo} alt="Logo" height="40" roundedCircle />
+          <Image
+            src={logo}
+            alt="Logo"
+            height="40"
+            roundedCircle
+            style={{ marginLeft: 10 }}
+          />
         </Navbar.Brand>
 
         <Navbar.Toggle
@@ -24,7 +42,7 @@ export default function NavigationBar() {
           style={{ backgroundColor: "#5b548e" }}
         />
 
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse id="basic-navbar-nav" className="m-2">
           <Nav className="ms-auto">
             <Nav.Link as={Link} to="/">
               About
@@ -38,8 +56,18 @@ export default function NavigationBar() {
 
             {isLoggedIn ? (
               <>
-                <Nav.Link as={Link} to="/projects/post">
-                  Create Project
+                <Nav.Link
+                  as={Link}
+                  to="/projects/post"
+                  style={{
+                    background: "transparent",
+                    border: "1px solid rgba(157,147,255,0.4)",
+                    color: "#9d93ff",
+                    borderRadius: "8px",
+                    marginLeft: "8px",
+                  }}
+                >
+                  Post Project
                 </Nav.Link>
                 <Button
                   onClick={handleLogout}
