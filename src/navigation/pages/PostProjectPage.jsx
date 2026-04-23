@@ -3,6 +3,7 @@ import { supabase } from "../../utils/supabase";
 import { Form, Button, Alert } from "react-bootstrap";
 
 const MAX_FILE_SIZE = 50 * 1024 * 1024; // 50MB
+const MAX_DESC_LENGTH = 300;
 
 export default function PostProjectPage() {
   const [form, setForm] = useState({
@@ -22,6 +23,12 @@ export default function PostProjectPage() {
 
   function handleChange(e) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  }
+
+  function handleDescriptionChange(e) {
+    if (e.target.value.length <= MAX_DESC_LENGTH) {
+      handleChange(e);
+    }
   }
 
   function handleImageChange(e) {
@@ -134,6 +141,9 @@ export default function PostProjectPage() {
     }
   }
 
+  const descLength = form.description.length;
+  const descAtLimit = descLength >= MAX_DESC_LENGTH;
+
   return (
     <div
       style={{
@@ -193,20 +203,31 @@ export default function PostProjectPage() {
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formDescription">
-                <Form.Label style={{ color: "#9d93ff" }}>
-                  Description *
-                </Form.Label>
+                <div className="d-flex justify-content-between align-items-baseline">
+                  <Form.Label style={{ color: "#9d93ff" }}>
+                    Description *
+                  </Form.Label>
+                  <span
+                    style={{
+                      fontSize: "12px",
+                      color: descAtLimit ? "#ff6b6b" : "#9d93ff",
+                      opacity: descAtLimit ? 1 : 0.7,
+                    }}
+                  >
+                    {descLength}/{MAX_DESC_LENGTH}
+                  </span>
+                </div>
                 <Form.Control
                   as="textarea"
                   rows={4}
                   name="description"
                   value={form.description}
-                  onChange={handleChange}
+                  onChange={handleDescriptionChange}
                   placeholder="What's your game about?"
                   className="custom-placeholder"
                   style={{
                     background: "transparent",
-                    border: "1px solid rgba(157,147,255,0.4)",
+                    border: `1px solid ${descAtLimit ? "rgba(255,107,107,0.6)" : "rgba(157,147,255,0.4)"}`,
                     color: "#9d93ff",
                     borderRadius: "8px",
                   }}
