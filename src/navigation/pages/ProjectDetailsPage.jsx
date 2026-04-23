@@ -105,6 +105,7 @@ export default function ProjectDetailsPage() {
           >
             Project
           </p>
+          
           <h1
             style={{
               color: "#f0eeff",
@@ -115,9 +116,30 @@ export default function ProjectDetailsPage() {
           >
             {project.project_name}
           </h1>
-          <p style={{ color: "#b8b8d0", fontSize: "15px", maxWidth: "600px" }}>
-            {project.description}
-          </p>
+
+         {project.cover_image && (
+          <div style={{ 
+            width: "100%", 
+            borderRadius: "12px", 
+            marginBottom: "32px",
+            background: "#1e1e35",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            padding: "16px"
+          }}>
+            <img
+              src={project.cover_image}
+              alt={project.project_name}
+              style={{ 
+                width: "60%",
+                height: "auto",
+                borderRadius: "8px"
+              }}
+            />
+          </div>
+        )}
+
         </div>
 
         <Row className="g-4">
@@ -168,55 +190,41 @@ export default function ProjectDetailsPage() {
               </Card>
             )}
 
-            {/* Game Link */}
+            {/* Game Link + Description */}
             {project.game_link && (
-              <Card
-                style={{
-                  backgroundColor: "#2e3060",
-                  border: "1px solid rgba(157,147,255,0.3)",
-                  borderRadius: "12px",
-                }}
-              >
-                <Card.Body
-                  className="p-4"
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    flexWrap: "wrap",
-                    gap: "16px",
-                  }}
-                >
-                  <div>
-                    <p
-                      style={{
-                        fontSize: "11px",
-                        letterSpacing: "1.5px",
-                        textTransform: "uppercase",
-                        color: "#9d93ff",
-                        marginBottom: "6px",
-                      }}
-                    >
-                      Play the game
+              <Card style={{ backgroundColor: "#2e3060", border: "1px solid rgba(157,147,255,0.3)", borderRadius: "12px" }}>
+                <Card.Body className="p-4">
+                  
+                  {/* Description */}
+                  <div style={{ marginBottom: "20px", paddingBottom: "20px", borderBottom: "1px solid rgba(157,147,255,0.2)" }}>
+                    <p style={{ fontSize: "11px", letterSpacing: "1.5px", textTransform: "uppercase", color: "#9d93ff", marginBottom: "8px" }}>
+                      Description
                     </p>
-                    <p style={{ color: "#b8b8d0", margin: 0 }}>
-                      This project is available to play online.
+                    <p style={{ color: "#b8b8d0", margin: 0, lineHeight: "1.7" }}>
+                      {project.description}
                     </p>
                   </div>
-                  <Button
-                    href={project.game_link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      background: "#5865f2",
-                      border: "none",
-                      borderRadius: "8px",
-                      padding: "10px 24px",
-                      whiteSpace: "nowrap",
-                    }}
-                  >
-                    Play Now →
-                  </Button>
+
+                  {/* Play button row */}
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "16px" }}>
+                    <div>
+                      <p style={{ fontSize: "11px", letterSpacing: "1.5px", textTransform: "uppercase", color: "#9d93ff", marginBottom: "6px" }}>
+                        Play the game
+                      </p>
+                      <p style={{ color: "#b8b8d0", margin: 0 }}>
+                        This project is available to play online.
+                      </p>
+                    </div>
+                    <Button
+                      href={project.game_link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ background: "#5865f2", border: "none", borderRadius: "8px", padding: "10px 24px", whiteSpace: "nowrap" }}
+                    >
+                      Play Now →
+                    </Button>
+                  </div>
+
                 </Card.Body>
               </Card>
             )}
@@ -254,10 +262,10 @@ export default function ProjectDetailsPage() {
                       margin: "0 0 4px",
                     }}
                   >
-                    Owner
+                    Team Members
                   </p>
                   <p style={{ color: "#f0eeff", fontWeight: 500, margin: 0 }}>
-                    {project.owner || "—"}
+                    {project.team_members || "—"}
                   </p>
                 </div>
 
