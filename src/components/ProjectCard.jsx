@@ -9,21 +9,30 @@ function ProjectCard(props) {
       style={{
         width: "100%", // fill column width
         maxWidth: 500, // limit max width on large screens
-        height: "24rem",
+        height: "23rem",
         maxHeight: 600,
         backgroundColor: "#2e3060",
         border: "none",
       }}
     >
       <Card.Body>
-        <Card.Img
-          src={props.cover_image}
+        <div
           style={{
-            width: "100%",
-            height: "14rem",
-            objectFit: "fit",
+            width: "66.67%",
+            aspectRatio: "63 / 50",
+            overflow: "hidden",
+            margin: "0 auto",
           }}
-        />
+        >
+          <Card.Img
+            src={props.cover_image}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+        </div>
 
         {/* Card title */}
         <Card.Title
@@ -37,6 +46,18 @@ function ProjectCard(props) {
         >
           {props.project_name}
         </Card.Title>
+
+        {/* Date Finished */}
+        <Card.Text
+          style={{
+            color: "#9d93ff",
+            fontSize: 15,
+            overflow: "hidden",
+          }}
+          className="ps-1 pe-1 m-2"
+        >
+          {props.date_ended}
+        </Card.Text>
 
         {/* Description */}
         <Card.Text
@@ -54,7 +75,7 @@ function ProjectCard(props) {
           {props.description}
         </Card.Text>
 
-        <div className="m-2">
+        <div>
           {props.game_link && (
             <Button
               className="mf-2 me-2"

@@ -15,14 +15,28 @@ export default function ProjectPage() {
   async function getProjects() {
     const { data, err } = await supabase.from("Projects").select();
     if (err) console.error(err);
+    console.log(data);
     setProjects(data);
   }
 
   return (
-    <div style={{ background: "#232749", minHeight: "100vh", padding: "60px 20px" }}>
+    <div
+      style={{
+        background: "#232749",
+        minHeight: "100vh",
+        padding: "60px 20px",
+      }}
+    >
       <Container>
         <div style={{ marginBottom: "40px" }}>
-          <h1 style={{ color: "#f0eeff", fontSize: "32px", fontWeight: 500, margin: "0 0 12px" }}>
+          <h1
+            style={{
+              color: "#f0eeff",
+              fontSize: "32px",
+              fontWeight: 500,
+              margin: "0 0 12px",
+            }}
+          >
             Projects
           </h1>
         </div>
