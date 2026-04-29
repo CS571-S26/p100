@@ -62,12 +62,7 @@ export default function ProjectDetailsPage() {
     );
   }
 
-  const teamMembers = project.team_members
-    ? project.team_members
-        .split(",")
-        .map((m) => m.trim())
-        .filter(Boolean)
-    : [];
+  const teamMembers = project.team?.members || [];
 
   return (
     <div
@@ -145,51 +140,6 @@ export default function ProjectDetailsPage() {
         <Row className="g-4">
           {/* Left column — main info */}
           <Col md={8}>
-            {/* Team Members */}
-            {teamMembers.length > 0 && (
-              <Card
-                className="mb-4"
-                style={{
-                  backgroundColor: "#2e3060",
-                  border: "1px solid #232749",
-                  borderRadius: "12px",
-                }}
-              >
-                <Card.Body className="p-4">
-                  <p
-                    style={{
-                      fontSize: "11px",
-                      letterSpacing: "1.5px",
-                      textTransform: "uppercase",
-                      color: "#9d93ff",
-                      marginBottom: "12px",
-                    }}
-                  >
-                    Team Members
-                  </p>
-                  <div
-                    style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}
-                  >
-                    {teamMembers.map((member, i) => (
-                      <span
-                        key={i}
-                        style={{
-                          fontSize: "13px",
-                          padding: "4px 12px",
-                          borderRadius: "20px",
-                          background: "rgba(120,100,255,0.18)",
-                          color: "#b8b0ff",
-                          border: "0.5px solid rgba(170,150,255,0.45)",
-                        }}
-                      >
-                        {member}
-                      </span>
-                    ))}
-                  </div>
-                </Card.Body>
-              </Card>
-            )}
-
             {/* Game Link + Description */}
             {project.game_link && (
               <Card style={{ backgroundColor: "#2e3060", border: "1px solid rgba(157,147,255,0.3)", borderRadius: "12px" }}>
@@ -265,7 +215,7 @@ export default function ProjectDetailsPage() {
                     Team Members
                   </p>
                   <p style={{ color: "#f0eeff", fontWeight: 500, margin: 0 }}>
-                    {project.team_members || "—"}
+                    {teamMembers.length > 0 ? teamMembers.join(", ") : "—"}
                   </p>
                 </div>
 
